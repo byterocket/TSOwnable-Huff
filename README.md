@@ -1,5 +1,5 @@
 <h1 align=center><code>
-A TSOwnable Contract implemented in Huff
+TSOwnable in Huff
 </code></h1>
 
 `TSOwnable` is a Two-Step Transfer Ownable contract implemented in [Huff](https://github.com/huff-language),
