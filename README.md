@@ -23,7 +23,9 @@ Run tests with `forge test --ffi`.
 > **Warning**
 >
 > The `HuffDeployer` library uses Huff's `huff-rs` compiler to compile and deploy Huff contracts.
+>
 > In order to call the `huff-rs` compiler, foundry's FFI cheatcode needs to be activated.
+>
 > **ONLY USE THE FFI FLAG IF YOU ARE CERTAIN THAT THE CODE IS NOT MALICIOUS!**
 
 ## Disclaimer
