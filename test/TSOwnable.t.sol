@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-pragma solidity ^0.8.13;
+pragma solidity 0.8.13;
 
 import "forge-std/Test.sol";
+
+import {HuffDeployer} from "foundry-huff/HuffDeployer.sol";
 
 interface ITSOwnable {
     function owner() external view returns (address);
@@ -24,18 +26,7 @@ contract TSOwnableTest is Test {
     event NewOwner(address indexed previousOwner, address indexed newOwner);
 
     function setUp() public {
-        // Compile huff contract via `huffc --bytecode src/TSOwnable.huff` and
-        // paste bytecode here.
-        bytes memory code = hex"33600055610109806100116000396000f3346101035760003560e01c8063c42069ec1461003757806379ba5097146100a75780638da5cb5b146100eb578063e30c3978146100f7575b60005433146100465760006000fd5b6004357f000000000000000000000000ffffffffffffffffffffffffffffffffffffffff168033146100a157806001547fb3d55174552271a4f1aaf36b72f50381e892171636b3fb5447fe00e995e7a37b60006000a3600155005b60006000fd5b60015433146100b65760006000fd5b336000547f70aea8d848e8a90fb7661b227dc522eb6395c3dac71b63cb59edd5c9899b236460006000a3336000556000600155005b60005460005260206000f35b60015460005260206000f35b60006000fd";
-
-        // Deploy contract to deterministic address via create2 and save
-        // address to storage.
-        address impl;
-        bytes32 salt = keccak256(abi.encode(1));
-
-        assembly {
-           impl := create2(0, add(code, 0x20), mload(code), salt)
-        }
+        address impl = HuffDeployer.deploy("TSOwnable");
         assert(impl != address(0));
 
         sut = ITSOwnable(impl);

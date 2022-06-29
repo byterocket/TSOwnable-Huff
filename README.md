@@ -7,18 +7,24 @@ a low-level EVM programming language.
 
 ## Installation
 
-1. Install Huff's [huffc](https://github.com/huff-language/huffc) compiler and the [foundry](https://github.com/foundry-rs/foundry) toolchain
+1. Install Huff's [huff-rs](https://github.com/huff-language/huff-rs) compiler and the [foundry](https://github.com/foundry-rs/foundry) toolchain
 2. Clone and `cd` into the repository
 3. Run `forge install`
 
 ## Compilation
 
-Compile huff contract via `huffc --bytecode src/TSOwnable.huff` and paste
-the bytecode into the `test/TSOwnable.t.sol#setUp()` function.
+This project uses Huff's [HuffDeployer](https://github.com/huff-language/foundry-huff) library to
+easily compile and test Huff contracts.
 
 ## Tests
 
-Run tests with `forge test`.
+Run tests with `forge test --ffi`.
+
+> **Warning**
+>
+> The `HuffDeployer` library uses Huff's `huff-rs` compiler to compile and deploy Huff contracts.
+> In order to call the `huff-rs` compiler, foundry's FFI cheatcode needs to be activated.
+> **ONLY USE THE FFI FLAG IF YOU ARE CERTAIN THAT THE CODE IS NOT MALICIOUS!**
 
 ## Disclaimer
 
