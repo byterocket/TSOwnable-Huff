@@ -27,8 +27,6 @@ contract TSOwnableTest is Test {
 
     function setUp() public {
         address impl = HuffDeployer.deploy("TSOwnable");
-        assert(impl != address(0));
-
         sut = ITSOwnable(impl);
     }
 
