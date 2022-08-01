@@ -47,11 +47,11 @@ contract TSOwnableTest is Test {
     }
 
     function testSetPendingOwner(address to) public {
-        vm.assume(to != sut.owner());
+        address owner = sut.owner();
+        vm.assume(to != owner);
 
-        vm.expectEmit(true, true, true, true);
-        emit NewPendingOwner(address(0), to);
-
+        vm.expectEmit(true, true, false, false);
+        emit NewPendingOwner(owner, to);
         sut.setPendingOwner(to);
         assertEq(sut.pendingOwner(), to);
     }

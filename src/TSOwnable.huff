@@ -89,7 +89,7 @@
     dup1
 
     // Emit NewPendingOwner event
-    [PENDING_OWNER_SLOT] sload [EVENT_NEW_PENDING_OWNER] 0x00 0x00
+    [OWNER_SLOT] sload [EVENT_NEW_PENDING_OWNER] 0x00 0x00
     log3
 
     // Store address as pending owner
