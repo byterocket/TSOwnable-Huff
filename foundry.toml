@@ -1,6 +1,9 @@
-[default]
+[profile.default]
 src = 'src'
 out = 'out'
 libs = ['lib']
+# NOTE that ffi = true is disabled.
+# This project is a learning example and we want folks to understand the risks
+# of ffi, therefore expecting them to activate it themself via the `--ffi` flag.
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config

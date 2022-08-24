@@ -5,6 +5,9 @@ TSOwnable in Huff
 `TSOwnable` is a Two-Step Transfer Ownable contract implemented in [Huff](https://github.com/huff-language),
 a low-level EVM programming language.
 
+For more information about how to enter the Huff ecosystem, read our accompanying
+[article](https://merkleplant.xyz/posts/entering-the-huff-ecosystem).
+
 ## Installation
 
 1. Install Huff's [huff-rs](https://github.com/huff-language/huff-rs) compiler and the [foundry](https://github.com/foundry-rs/foundry) toolchain
